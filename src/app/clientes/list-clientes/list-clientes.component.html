@@ -1,0 +1,24 @@
+<div class="table-responsive">
+  <table class="table table-condensed table-striped table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Correo Electrónico</th>
+      <th>Compañía</th>
+      <th>rfc</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cliente of _clientes">
+      <td>{{cliente.id}}</td>
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.email}}</td>
+      <td>{{cliente.compania}}</td>
+      <td>{{cliente.rfc}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+1
