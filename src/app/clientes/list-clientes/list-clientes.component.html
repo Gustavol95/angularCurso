@@ -1,3 +1,4 @@
+
 <div class="table-responsive">
   <table class="table table-condensed table-striped table-hover">
     <thead>
@@ -7,6 +8,8 @@
       <th>Correo Electrónico</th>
       <th>Compañía</th>
       <th>rfc</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
       <th></th>
     </tr>
     </thead>
@@ -17,8 +20,24 @@
       <td>{{cliente.email}}</td>
       <td>{{cliente.compania}}</td>
       <td>{{cliente.rfc}}</td>
+      <td> <button type="button" class="btn btn-primary" (click)="open(content)">Editar</button></td>
+      <td> <button type="button" class="btn btn-primary" (click)="onEliminarClick(cliente)">Eliminar</button></td>
     </tr>
     </tbody>
   </table>
 </div>
-1
+
+<template ngbModalContainer #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+  </div>
+</template>
